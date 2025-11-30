@@ -1,0 +1,29 @@
+# =========================
+#   GITIGNORE PARA MAVEN
+# =========================
+
+# --- Carpetas generadas ---
+target/
+
+# --- Archivos compilados ---
+*.class
+
+# --- Logs ---
+*.log
+
+# --- Paquetes ---
+*.jar
+*.war
+*.ear
+
+# --- Configuración de IntelliJ ---
+.idea/
+*.iml
+out/
+
+# --- Configuración de VSCode ---
+.vscode/
+
+# --- Archivos del sistema ---
+.DS_Store
+Thumbs.db
