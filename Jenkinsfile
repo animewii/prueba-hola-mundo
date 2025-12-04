@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven'      // Cambia al nombre de Maven configurado en Jenkins si es distinto
-        jdk 'JDK17'        // Cambia al nombre de tu JDK en Jenkins
+        maven 'Maven'
+        jdk   'JDK17'
     }
 
     stages {
@@ -22,16 +22,19 @@ pipeline {
             }
         }
 
-stage('Quality Gate') {
-    steps {
-        script {
-            timeout(time: 15, unit: 'MINUTES') {
-                def qg = waitForQualityGate()
-                echo "Quality Gate status: ${qg.status}"
-                if (qg.status != 'OK') {
-                    error "Pipeline aborted due to quality gate failure: ${qg.status}"
+        stage('Quality Gate') {
+            steps {
+                script {
+                    timeout(time: 15, unit: 'MINUTES') {
+                        def qg = waitForQualityGate()
+                        echo "Quality Gate status: ${qg.status}"
+                        if (qg.status != 'OK') {
+                            error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                        }
+                    }
                 }
             }
         }
     }
 }
+
