@@ -5,18 +5,23 @@ pipeline {
         maven 'Maven'
         jdk   'JDK17'
     }
-
+    
+    environment {
+        REPO_URL = 'https://github.com/animewii/prueba-hola-mundo.git'
+        BRANCH   = 'main'
+        SONARQ   = 'SonarQube'
+    }
+    
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/animewii/prueba-hola-mundo.git'
+                git branch: BRANCH, url: REPO_URL
             }
         }
 
         stage('Build & SonarQube') {
             steps {
-                withSonarQubeEnv('SonarQube') {
+                withSonarQubeEnv(SONARQ) {
                     sh 'mvn clean verify sonar:sonar'
                 }
             }
