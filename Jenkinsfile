@@ -3,15 +3,15 @@ pipeline {
 
     tools {
         maven 'Maven'
-        jdk   'JDK17'
+        jdk 'JDK17'
     }
-    
+
     environment {
         REPO_URL = 'https://github.com/animewii/prueba-hola-mundo.git'
         BRANCH   = 'main'
         SONARQ   = 'SonarQube'
     }
-    
+
     stages {
         stage('Checkout') {
             steps {
@@ -57,14 +57,12 @@ pipeline {
                     )
                 ],
                 contextPath: '/hola-mundo',
-                war: 'target/*.war'
+                war: 'target/*.jar'
             }
         }
-
-        
     }
 
-        post {
+    post {
         success {
             emailext(
                 subject: "OK: ${env.JOB_NAME} #${env.BUILD_NUMBER} desplegado en PROD",
@@ -98,7 +96,5 @@ Jenkins
             )
         }
     }
-
-    
 }
 
