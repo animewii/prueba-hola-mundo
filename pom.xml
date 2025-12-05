@@ -8,7 +8,7 @@
     <groupId>com.ejemplo</groupId>
     <artifactId>hola-mundo</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     
     <name>Hola Mundo Maven</name>
     <description>Proyecto Hola Mundo con Maven y Java</description>
@@ -41,6 +41,13 @@
                     <target>11</target>
                 </configuration>
             </plugin>
+
+         <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version>
+            </plugin>
+
             
             <!-- Plugin para ejecutar la aplicación -->
             <plugin>
