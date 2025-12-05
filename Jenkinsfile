@@ -57,7 +57,7 @@ pipeline {
                     )
                 ],
                 contextPath: '/hola-mundo',
-                war: 'target/*.jar'
+                war: 'target/*.war'
             }
         }
     }
