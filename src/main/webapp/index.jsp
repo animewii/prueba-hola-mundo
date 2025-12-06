@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
     <title>Hola Mundo Web</title>
     <meta charset="UTF-8">
