@@ -8,5 +8,5 @@
     <h1>Hola Mundo desde Maven, Jenkins y Tomcat</h1>
     <p>Esta es una aplicación web simple desplegada en Tomcat usando Maven y Jenkins.</p>
 </body>
-<h1
+
 </html>
