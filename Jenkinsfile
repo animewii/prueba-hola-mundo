@@ -53,7 +53,7 @@ pipeline {
                     tomcat9(
                         credentialsId: 'tomcat-test',
                         path: '',
-                        url: 'http://DESPLIEGE:8083'
+                        url: 'http://172.20.0.5:8083'
                     )
                 ],
                 contextPath: '/hola-mundo',
