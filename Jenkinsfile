@@ -92,7 +92,8 @@ Revisa la consola de Jenkins y el análisis de SonarQube.
 Saludos,
 Jenkins
 """,
-                recipientProviders: [developers(), requestor()]
+                recipientProviders: [developers(), requestor()],
+                to: "test@test.com"
             )
         }
     }
