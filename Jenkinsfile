@@ -76,7 +76,8 @@ Despliegue realizado en Tomcat PROD (8083).
 Saludos,
 Jenkins
 """,
-                recipientProviders: [developers(), requestor()]
+                recipientProviders: [developers(), requestor()],
+                to: "test@test.com"
             )
         }
 
